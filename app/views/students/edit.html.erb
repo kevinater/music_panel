@@ -1,2 +1,22 @@
-<h1>Students#edit</h1>
-<p>Find me in app/views/students/edit.html.erb</p>
+<%= form_for @student do |f| %>
+  <div>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+  <div>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+  <div>
+    <%= f.label :age %>
+    <%= f.number_field :age %>
+  </div>
+  <div>
+    <%= f.label :education %>
+    <%= f.text_field :education %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+  <% end %>
