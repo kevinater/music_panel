@@ -9,3 +9,6 @@
     first_student = Student.create(first_name: 'Kevin', last_name: 'Vahdat', age: 23, education: 'College')
 
     course_one = Course.create(course_name: 'Gypsy Jazz Fundamentals', hours: 4)
+
+    # for x in (0..10)
+      
