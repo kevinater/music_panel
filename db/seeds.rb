@@ -11,4 +11,3 @@
     course_one = Course.create(course_name: 'Gypsy Jazz Fundamentals', hours: 4)
 
     # for x in (0..10)
-      
