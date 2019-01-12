@@ -11,11 +11,11 @@
   </div>
   <div>
     <%= f.label :age %>
-    <%= f.number_field :age %>
+    <%= f.number_field :age, max: 150, min: 0 %>
   </div>
   <div>
     <%= f.label :education %>
-    <%= f.text_field :education %>
+    <%= f.select :education, Student.educations.keys %>
   </div>
 
   <div>

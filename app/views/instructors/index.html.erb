@@ -1,2 +1,26 @@
-<h1>Instructors#index</h1>
-<p>Find me in app/views/instructors/index.html.erb</p>
+<h1>Instructor List</h1>
+
+<table>
+  <thead>
+    <th>First Name</th>
+    <th>Last Name </th>
+    <th>Age</th>
+    <th>Salary</th>
+    <th>Education</th>
+  </thead>
+  <% @instructors.each do |instructor| %>
+  <tr>
+    <td> <%=instructor.first_name %></td>
+    <td> <%=instructor.last_name %></td>
+    <td> <%=instructor.age %></td>
+    <td> <%=instructor.salary %></td>
+    <td> <%=instructor.education %></td>
+    <td>
+      <%=link_to "Add instructor", new_instructor_path(instructor) %>
+      <%=link_to "Edit", edit_instructor_path(instructor) %>
+      <%=link_to "Delete", instructor, method: :delete, data: {confirm: 'Are you sure?'} %>
+    </td>
+
+  </tr>
+  <% end %>
+</table>

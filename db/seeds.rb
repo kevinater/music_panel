@@ -10,4 +10,6 @@
 
     course_one = Course.create(course_name: 'Gypsy Jazz Fundamentals', hours: 4)
 
-    # for x in (0..10)
+    first_instructor = Instructor.create(first_name: 'Paul', last_name: 'Gilbert', age: 52, salary: 45000, education: 'PhD' )
+
+    

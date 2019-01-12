@@ -1,2 +1,32 @@
-<h1>Instructors#new</h1>
-<p>Find me in app/views/instructors/new.html.erb</p>
+<h1>Add a New Instructor</h1>
+
+<%= form_for @instructor do |f| %>
+  <div>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+  <div>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+  <div>
+    <%= f.label :age %>
+    <%= f.number_field :age, max: 150, min: 0 %>
+  </div>
+
+  <div>
+    <%= f.label :salary %>
+    <%= f.number_field :salary, min: 0 %>
+  </div>
+
+
+  <div>
+    <%= f.label :education %>
+    <%= f.select :education, Instructor.educations.keys %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+  <% end %>
+

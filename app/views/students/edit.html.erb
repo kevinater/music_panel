@@ -13,7 +13,7 @@
   </div>
   <div>
     <%= f.label :education %>
-    <%= f.text_field :education %>
+    <%= f.select :education, Student.educations.keys %>
   </div>
 
   <div>
