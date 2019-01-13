@@ -3,7 +3,7 @@
 <%= form_for @student do |f| %>
   <div class="form-group">
     <%= f.label :first_name %>
-    <%= f.text_field :first_name, class: "form-control" %>
+    <%= f.text_field :first_name %>
   </div>
   <div>
     <%= f.label :last_name %>
@@ -19,6 +19,6 @@
   </div>
 
   <div>
-    <%= f.submit %> 
+    <%= f.submit %>
   </div>
   <% end %>

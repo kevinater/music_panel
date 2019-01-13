@@ -10,6 +10,5 @@
 
     course_one = Course.create(course_name: 'Gypsy Jazz Fundamentals', hours: 4)
 
-    first_instructor = Instructor.create(first_name: 'Paul', last_name: 'Gilbert', age: 52, salary: 45000, education: 'PhD' )
+    first_instructor = Instructor.create(first_name: 'Paul', last_name: 'Gilbert', age: 52, salary: 45000, education: 'PHD' )
 
-    
