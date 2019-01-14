@@ -3,11 +3,11 @@
 <%= form_for @instructor do |f| %>
   <div>
     <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, required: true %>
   </div>
   <div>
     <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, required: true %>
   </div>
   <div>
     <%= f.label :age %>

@@ -5,7 +5,7 @@ class InstructorsController < ApplicationController
   end
 
   def show
-
+    @instructor = Instructor.find(params[:id])
   end
 
   def new
@@ -18,12 +18,23 @@ class InstructorsController < ApplicationController
   end
 
   def update
+    @instructor = Instructor.find(params[:id])
+      if @instructor.update(instructor_params)
+        @instructor.save
+        redirect_to instructors_path
+      else
+        render :edit
+      end
   end
 
   def edit
+    @instructor = Instructor.find(params[:id])
   end
 
   def destroy
+  @instructor = Instructor.find(params[:id])
+    @instructor.destroy
+    redirect_to instructors_path
   end
 
   private

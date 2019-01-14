@@ -1,26 +1,37 @@
-<h1>Instructor List</h1>
 
-<table>
-  <thead>
-    <th>First Name</th>
-    <th>Last Name </th>
-    <th>Age</th>
-    <th>Salary</th>
-    <th>Education</th>
-  </thead>
-  <% @instructors.each do |instructor| %>
-  <tr>
-    <td> <%=instructor.first_name %></td>
-    <td> <%=instructor.last_name %></td>
-    <td> <%=instructor.age %></td>
-    <td> <%=instructor.salary %></td>
-    <td> <%=instructor.education %></td>
-    <td>
-      <%=link_to "Add instructor", new_instructor_path(instructor) %>
-      <%=link_to "Edit", edit_instructor_path(instructor) %>
-      <%=link_to "Delete", instructor, method: :delete, data: {confirm: 'Are you sure?'} %>
-    </td>
+<div class="container">
+    <h1>Instructor List</h1>
 
-  </tr>
-  <% end %>
-</table>
+
+    <%=button_to "Add Instructor", new_instructor_path, method: "get"%>
+    <table class="table table-striped">
+    <thead>
+        <th>First Name</th>
+        <th>Last Name </th>
+        <th>Age</th>
+        <th>Salary</th>
+        <th>Education</th>
+    </thead>
+    <% @instructors.each do |instructor| %>
+    <tr>
+        <td> <%=link_to(instructor) do %>
+             <%=instructor.first_name %>
+             <% end %>
+        </td>
+        <td> <%=link_to(instructor) do %>
+             <%=instructor.last_name %>
+             <% end %>
+        </td>
+        <td> <%=instructor.age %></td>
+        <td> <%=instructor.salary %></td>
+        <td> <%=instructor.education %></td>
+        <td>
+        <%=link_to "Edit", edit_instructor_path(instructor) %>
+        </td>
+        <td>
+        <%=link_to "Delete", instructor, method: :delete, data: {confirm: 'Are you sure?'} %>
+        </td>
+
+    </tr>
+    <% end %>
+    </table>

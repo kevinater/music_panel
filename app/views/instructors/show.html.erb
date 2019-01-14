@@ -1,2 +1,31 @@
-<h1>Instructors#show</h1>
-<p>Find me in app/views/instructors/show.html.erb</p>
+<div class="card" style="width: 18rem;">
+  <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+  <div class="card-body">
+    <h5 class="card-title"><%=@instructor.first_name %> <%=@instructor.last_name %></h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Age: <%=@instructor.age %></li>
+    <li class="list-group-item">Salary: <%=@instructor.salary %></li>
+    <li class="list-group-item">Education: <%=@instructor.education %></li>
+  </ul>
+  <div class="card-body">
+    <%= link_to 'Edit', edit_instructor_path(@instructor) %>
+    <br>
+    <%= link_to 'Delete', @instructor, method: :delete, data: {confirm: 'Are you sure?'} %>
+  </div>
+</div>
+
+<br>
+
+<h3> Cohorts </h3>
+
+<% if @instructor.cohorts.empty? %>
+    <p> Not enrolled in any cohorts </p>
+<% else %>
+ <ul>
+    <% @instructor.cohorts.each do |cohort| %>
+    <li> <%=cohort.name %> </li>
+    <% end %>
+ </ul>
+ <% end %>
+

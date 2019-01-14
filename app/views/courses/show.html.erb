@@ -1,2 +1,30 @@
-<h1>Courses#show</h1>
-<p>Find me in app/views/courses/show.html.erb</p>
+<div class="card" style="width: 18rem;">
+  <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+  <div class="card-body">
+    <h5 class="card-title"><%=@course.course_name %> </h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Credit Hours: <%=@course.hours %></li>
+  </ul>
+  <div class="card-body">
+    <%= link_to 'Edit', edit_course_path(@course) %>
+    <br>
+    <%= link_to 'Delete', @course, method: :delete, data: {confirm: 'Are you sure?'} %>
+  </div>
+</div>
+
+<br>
+
+<h3> Cohorts </h3>
+
+<% if @course.cohorts.empty? %>
+    <p> No cohorts available yet </p>
+<% else %>
+ <ul>
+    <% @course.cohorts.each do |cohort| %>
+    <li> <%=cohort.name %> </li>
+    <% end %>
+ </ul>
+ <% end %>
+
+

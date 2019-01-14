@@ -1,2 +1,44 @@
-<h1>Cohorts#show</h1>
-<p>Find me in app/views/cohorts/show.html.erb</p>
+
+<div class="card" style="width: 18rem;">
+  <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+  <div class="card-body">
+    <h5 class="card-title"><%=@cohort.name %> </h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Start Date: <%=@cohort.start_date %></li>
+    <li class="list-group-item">End Date: <%=@cohort.end_date %></li>
+    <li class="list-group-item">Course Title: <%=@cohort.course.course_name %></li>
+  </ul>
+  <div class="card-body">
+    <%= link_to 'Edit', edit_cohort_path(@cohort) %>
+    <br>
+    <%= link_to 'Delete', @cohort, method: :delete, data: {confirm: 'Are you sure?'} %>
+  </div>
+</div>
+
+<br>
+
+<h3> Students </h3>
+
+<%= form_for(@cohort) do |f| %>
+  <div>
+    <%= f.label "Students:" %>
+    <%= fields_for @cohort.students do |student | %>
+        <%= student.collection_select :student_id, @students, :id, :first_name %>
+        <% end %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+  <% end %>
+<% if @cohort.students.empty? %>
+    <p> No students enrolled yet </p>
+<% else %>
+ <ul>
+    <% @cohort.students.each do |student| %>
+    <li> <%=student.first_name %> <%=student.last_name %></li>
+    <% end %>
+ </ul>
+ <% end %>
+
+

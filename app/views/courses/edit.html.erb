@@ -1,2 +1,14 @@
-<h1>Courses#edit</h1>
-<p>Find me in app/views/courses/edit.html.erb</p>
+<%= form_for @course do |f| %>
+  <div>
+    <%= f.label :course_name %>
+    <%= f.text_field :course_name, required: true %>
+  </div>
+  <div>
+    <%= f.label :hours %>
+    <%= f.number_field :hours, min: 0, max: 20, required: true %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+  <% end %>

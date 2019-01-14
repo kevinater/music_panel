@@ -12,3 +12,4 @@
 
     first_instructor = Instructor.create(first_name: 'Paul', last_name: 'Gilbert', age: 52, salary: 45000, education: 'PHD' )
 
+    cohort_one = Cohort.create(name: 'Rhythm Basics Spring 2019', start_date: Date.parse('March 20th 2019'), end_date: Date.parse('May 10th 2019'))
